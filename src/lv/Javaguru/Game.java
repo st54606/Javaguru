@@ -11,6 +11,14 @@ package lv.Javaguru;
 public class Game {
     Game game =new Game();
    private  int[][] field;
+
+    public int[][] getField() {
+        return field;
+    }
+
+    public void setField(int[][] field) {
+        this.field = field;
+    }
     private int vert;
     private int hor;
    
@@ -18,10 +26,7 @@ public class Game {
    {
        this.vert=v;
        this.hor=h;
-      
-       
-       
-       
              
    }
+   
 }

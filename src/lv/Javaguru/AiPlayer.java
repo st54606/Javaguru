@@ -8,6 +8,6 @@ package lv.Javaguru;
  *
  * @author Vitalij
  */
-public class AiPlayer {
+public class AiPlayer extends Player {
     
 }
