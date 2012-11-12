@@ -71,11 +71,11 @@ public class Menu {
                     {
                         
                     }
-                }
+                }while(submenu==3);
         }
         
         
         
-        }
+        }while(menu==4);
     }
 }
