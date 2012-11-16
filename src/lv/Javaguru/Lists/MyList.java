@@ -9,27 +9,35 @@ package lv.Javaguru.Lists;
  * @author Jelena
  */
 public class MyList {
-    Element key = new Element();
-     public void add (int number, int value)
-    {
-        
-        int currentPos=0;
-       while(currentPos!=number)
-       {
-          key.setNext(key);
-          currentPos++;
-       }
-          key.setValue(7, 1);
-     
+
+    Element first = new Element();
+    Element current = new Element();
+    int currentPos = 0;
+
+    public void add(int value) {
+
+        if (first == null) {
+            first = new Element();
+            first.value = value;
+            
+        }
+
+        current = first;
+
+        while (current.next != null) {
+            current = current.next;
+        }
+        current.value=value;
     }
-       public int getElementValue(int number)
-       {
-          int point=0;
-          while(point!=number)
-          {
-              key=key.getNext();
-              point++;
-          }
-           return key.getValue(number);
-       }
+
+    public void getElementValue(int number) {
+        int currentPos = 0;
+        current=first;
+        while (currentPos != number && current.next!=null) {
+            current = current.next;
+            currentPos++;
+        }
+
+        System.out.println(current.value);
+    }
 }
