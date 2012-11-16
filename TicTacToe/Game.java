@@ -2,13 +2,15 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package lv.Javaguru.Lists;
+package lv.Javaguru.TicTacToe;
 
 /**
  *
- * @author Jelena
+ * @author Vitalij
  */
-public class Element {
-    public int value;
-   public Element next;  
+public class Game {
+   
+             
+   
+   
 }

@@ -18,12 +18,6 @@ public class MainMenuClass {
     public int menu, submenu;
     public ExpenseRegister expr;
 
-    public MainMenuClass()
-    {
-        menu=0;
-        submenu=0;
-        expr = new ExpenseRegister();
-    }
     public void showMainMenu() {
 
         System.out.println("");
@@ -32,7 +26,7 @@ public class MainMenuClass {
         System.out.println("Choose Operation: ");
         System.out.println("1) Create New File ");
         System.out.println("2) Load File ");
-        System.out.println("3) Save File ");
+        System.out.println("3) Save As ");
         System.out.println("4) Exit ");
 
     }
@@ -72,15 +66,13 @@ public class MainMenuClass {
 			}
                     
                     
-                    System.out.println("New file: " + newFileName + " are created");
+                    System.out.println("New file" + newFileName + " are cerated");
 break;
                 case 2:
                     System.out.println("Open file: ");
                     Scanner filenameInput = new Scanner(System.in);
                     filename = filenameInput.nextLine();
-                    expr.expenseList.clear();
                     expr.readFromFile(filename);
-                    System.out.println("File: "+filename + " loaded...");
 
                     do {
                         showSubMenu();
@@ -98,21 +90,19 @@ break;
 
                             System.out.println("Enter sum: ");
                             int expSum = dataInput.nextInt();
-                            
+
                             System.out.println("Enter description");
-                            String expDescription = dataInput.next();
+                            String expDescription = dataInput.nextLine();
 
                             expr.addExpense(new Expense(expDate, expSum, expDescription));
                             expr.writeToFile(filename);
-                            System.out.println("Added....");
                         }
                         //Remove data
                         if (submenu == 3) {
                             System.out.println("Enter id of record to remove");
                             Scanner dataInput = new Scanner(System.in);
                             int id = dataInput.nextInt();
-                            expr.removeExpenseByIndex(id-1);
-                            System.out.println("Deleted...");
+                            expr.removeExpenseByIndex(id);
                         }
 
                         if (submenu == 4) 
@@ -129,7 +119,6 @@ break;
                     break;
                 default:
                     System.exit(0);
-                    
                     break;
             }
         } while (menu != 4);
