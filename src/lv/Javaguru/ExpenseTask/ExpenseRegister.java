@@ -112,4 +112,18 @@ public void readFromFile(String filename)
     }
     
 }
+public void openFile(String filename)
+{
+	
+}
+public void loadFromFile(String filename)
+{
+	
+}
+
+
+public void saveFileAs(String filename)
+{
+	
+}
 }
