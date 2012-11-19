@@ -8,10 +8,10 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
-/**
- *
- * @author Vitalij
- */
+import org.joda.time.JodaTimePermission;
+
+
+
 public class MainMenuClass {
 
     public String filename;
@@ -27,19 +27,19 @@ public class MainMenuClass {
     public void showMainMenu() {
 
         System.out.println("");
-        System.out.println("---------------------");
+        System.out.println("******************");
         System.out.println("Main Menu: ");
         System.out.println("Choose Operation: ");
         System.out.println("1) Create New File ");
         System.out.println("2) Load File ");
-        System.out.println("3) Save File ");
+        System.out.println("3) Save File As ");
         System.out.println("4) Exit ");
 
     }
 
     public void showSubMenu() {
         System.out.println("");
-        System.out.println("---------------------");
+        System.out.println("*****************");
         System.out.println("Sub-Menu: ");
         System.out.println("Choose Operation: ");
         System.out.println("1) Show Data ");
@@ -56,23 +56,7 @@ public class MainMenuClass {
 
             switch (menu) {
                 case 1:
-                    System.out.println("Enter new file name: ");
-                    Scanner dataInputFileName = new Scanner(System.in);
-                    String newFileName = dataInputFileName.nextLine();
-                    File newFile = new File(newFileName);
-                    if (newFile.exists()) {
-                       
-                        System.out.println("Entered file name already exist..\n" +"Enter new file name: ");
-                        newFileName = dataInputFileName.nextLine();
-                    }
-                     try {
-				newFile.createNewFile();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-                    
-                    
-                    System.out.println("New file: " + newFileName + " are created");
+                	expr.createNewFile(filename);
 break;
                 case 2:
                     System.out.println("Open file: ");
@@ -99,6 +83,7 @@ break;
                             System.out.println("Enter sum: ");
                             int expSum = dataInput.nextInt();
                             
+                           
                             System.out.println("Enter description");
                             String expDescription = dataInput.next();
 
@@ -126,6 +111,7 @@ break;
                     Scanner newFileNameToWrite = new Scanner(System.in);
                     filename = newFileNameToWrite.nextLine();
                     expr.writeToFile(filename);
+                    System.out.println("File  "+filename+"  are saved");
                     break;
                 default:
                     System.exit(0);

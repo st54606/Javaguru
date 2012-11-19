@@ -4,13 +4,9 @@
  */
 package lv.Javaguru.ExpenseTask;
 
-import java.util.Date;
-import sun.util.calendar.BaseCalendar;
 
-/**
- *
- * @author Jelena
- */
+
+
 public class Expense {
    
 
