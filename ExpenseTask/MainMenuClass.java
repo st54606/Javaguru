@@ -49,7 +49,7 @@ public class MainMenuClass {
             menu = scanMenu.nextInt();
 
             switch (menu) {
-                case 1:
+                case 1: // Create new file....
                     System.out.println("Enter new file name: ");
                     Scanner dataInputFileName = new Scanner(System.in);
                     String newFileName = dataInputFileName.nextLine();
@@ -67,7 +67,8 @@ public class MainMenuClass {
                     
                     
                     System.out.println("New file" + newFileName + " are cerated");
-break;
+                    break;	
+				//Load file
                 case 2:
                     System.out.println("Open file: ");
                     Scanner filenameInput = new Scanner(System.in);
@@ -110,15 +111,17 @@ break;
                         
                     } while (menu != 4);
                     break;
-
-                case 3:
-                    System.out.println("Enter  file name: ");
-                    Scanner newFileNameToWrite = new Scanner(System.in);
-                    filename = newFileNameToWrite.nextLine();
-                    expr.writeToFile(filename);
-                    break;
-                default:
-                    System.exit(0);
+                    // Save as....
+			case 3:
+				System.out.println("Enter  file name1: ");
+				Scanner newFileNameToWrite = new Scanner(System.in);
+				filename = newFileNameToWrite.nextLine();
+				expr.writeToFile(filename);
+				System.out.println("File  " + filename + "  are saved");
+				break;
+			default:
+				
+				System.exit(0);
                     break;
             }
         } while (menu != 4);
