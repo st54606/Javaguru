@@ -21,9 +21,8 @@ public class TestGameField {
 	@Test
 	public void testIsCellAlive() {
 		GameField field = new GameField();
-
+		
 		field.fa[0][0] = true;
-
 		Assert.assertEquals(true, field.isCellAlive(0, 0));
 	}
 
