@@ -4,11 +4,9 @@
  */
 package lv.Javaguru.Lists;
 
-/**
- *
- * @author Jelena
- */
+
 public class Element {
-    public int value;
-   public Element next;  
+public int value;
+public Element rightElement;  
+public Element leftElement;
 }
