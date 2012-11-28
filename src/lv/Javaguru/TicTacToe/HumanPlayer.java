@@ -7,30 +7,26 @@ package lv.Javaguru.TicTacToe;
 import java.util.Scanner;
 
 /**
- *
+ * 
  * @author Vitalij
  */
 public class HumanPlayer extends Player {
-    
-  HumanPlayer Human1 = new HumanPlayer();
-  HumanPlayer Human2 = new HumanPlayer();
-  
-    /**
-     *
-     */
-    @Override
-    public void  AskForMoveHuman(Player Human) {
-        this.Human1=(HumanPlayer) Human;
-       
-       Scanner scan = new Scanner(System.in);
-       System.out.println("Make move on horizontal");
-       int hor_c= scan.nextInt();
-       Human.setHor_c(hor_c);
-       System.out.println("Make move on vertical");
-       int vert_c = scan.nextInt();
-       Human.setVert_c(vert_c);
-       
-       
-    }
-  
+	public int x, y, sign;
+
+	@Override
+	public void makeMove(Field field) {
+		Scanner input = new Scanner(System.in);
+		while (field.board[x][y] != 0) {
+			System.out.println("Enter x: ");
+			x = input.nextInt();
+			System.out.println("Enter y: ");
+			y = input.nextInt();
+			if (field.board[x][y] != 0) {
+				System.out
+						.println("The cell is not empty or coordinates is out of range \n Please make your move again");
+			}
+		}
+		field.putSign(x, y, sign);
+
+	}
 }
